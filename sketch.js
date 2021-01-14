@@ -59,16 +59,14 @@ function draw() {
   Engine.update(engine);
   ground.display();
   
-  if ( gameState =="end") {
+  if ( gameState === "end") {
     
     textSize(100);
     text("GameOver", 150, 250);
     //return
+    console.log("end " +gameState);
   }
-
-  
-
-  
+ console.log(gameState);
 
   for (var i = 0; i < plinkos.length; i++) {
      plinkos[i].display();  
@@ -121,5 +119,6 @@ function mousePressed()
   {
       count++;
      particle=new Particle(mouseX, 10, 10, 10); 
+     console.log("if "+ gameState);
   }   
 }
